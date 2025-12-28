@@ -3,7 +3,7 @@ export default function TopNavBar() {
     const classNameAnchor: string = "p-2 pr-6"
     const tabNavElem: string[] = [
         "Home",
-        "HardSkills",
+        "Skills",
         "Projects",
         "Contacts"
     ];

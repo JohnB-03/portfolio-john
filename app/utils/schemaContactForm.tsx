@@ -1,16 +1,13 @@
 import { z } from "zod";
 
 export const ContactFormSchema = z.object({
-    phone: z
-        .string()
-        .regex(
-            /^\+?[0-9\s-()]{7,20}$/,
-            { message: "Veuillez entrer un numéro de téléphone valide" }
-        ),
+    mail: z
+        .email({ message: "Please put an correct email" }),
+
     message: z
         .string()
-        .min(10, { message: "Votre message doit contenir au moins 10 caractères" })
-        .max(1500, { message: "Votre message doit contenir maximum 1500 caractères" }),
+        .min(10, { message: "Your message must have at least 10 characters" })
+        .max(1500, { message: "Your message must have maximum 1500 characters" }),
 })
 
 export type ContactFormInputs = z.infer<typeof ContactFormSchema>;

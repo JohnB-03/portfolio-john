@@ -21,7 +21,7 @@ export async function SendForm(input: ContactFormInputs) {
             to: ['john.bourguignon2003@gmail.com'],
             subject: 'Demande de contact',
             react: EmailTemplate({
-                phone: validatedData.data.phone,
+                mail: validatedData.data.mail,
                 message: validatedData.data.message,
             }),
         });
@@ -34,14 +34,14 @@ export async function SendForm(input: ContactFormInputs) {
 
         return {
             success: true,
-            message: "Message envoyé avec succès"
+            message: "Your message has been sent successfully"
         };
 
     } catch (error) {
         console.error(error);
         return {
             success: false,
-            message: "Une erreur s'est produite, veuillez réessayer"
+            message: "An error occurred, please try again"
         };
     }
 }

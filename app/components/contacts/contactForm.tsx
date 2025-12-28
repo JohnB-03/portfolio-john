@@ -37,7 +37,7 @@ const ContactForm = () => {
         resolver: zodResolver(ContactFormSchema),
         mode: "onChange",
         defaultValues: {
-            phone: "",
+            mail: "",
             message: "",
         }
     })
@@ -48,7 +48,7 @@ const ContactForm = () => {
 
             if (response.success) {
                 setIsSuccess(true);
-                form.reset({ phone: "", message: "" })
+                form.reset({ mail: "", message: "" })
             } else {
                 setIsSuccess(false);
                 form.setError("root.serverError", {
@@ -59,12 +59,12 @@ const ContactForm = () => {
         })
     }
     return (
-        <div>
-            <Card className="w-75 lg:w-95 border-2 border-[#002e4c] shadow-xl">
+        <div className="pl-30">
+            <Card className="w-75 lg:w-95 border-2 border-[#F1895C] shadow-xl">
                 <CardHeader>
-                    <CardTitle className="text-[#002e4c]">Contactez-nous</CardTitle>
+                    <CardTitle className="text-[#C5C6C6]">Contact me</CardTitle>
                 </CardHeader>
-                {isSuccess ? (<CardContent>Votre message a été envoyé</CardContent>) :
+                {isSuccess ? (<CardContent>Your message has been sent</CardContent>) :
                     (
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -75,7 +75,7 @@ const ContactForm = () => {
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
                                             </svg>
 
-                                            <AlertTitle>Erreur !</AlertTitle>
+                                            <AlertTitle>Error !</AlertTitle>
                                             <AlertDescription>
                                                 {form.formState.errors?.root?.serverError?.message}
                                             </AlertDescription>
@@ -84,12 +84,12 @@ const ContactForm = () => {
                                     <FormField
 
                                         control={form.control}
-                                        name="phone"
+                                        name="mail"
                                         render={({ field }) => (
                                             <FormItem>
-                                                <FormLabel className="text-[#002e4c]">Téléphone :</FormLabel>
+                                                <FormLabel className="text-[#C5C6C6]">Email :</FormLabel>
                                                 <FormControl>
-                                                    <Input placeholder="Votre numéro de téléphone..." {...field} />
+                                                    <Input placeholder="Your email address..." {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -100,9 +100,9 @@ const ContactForm = () => {
                                         name="message"
                                         render={({ field }) => (
                                             <FormItem>
-                                                <FormLabel className="text-[#002e4c]">Message :</FormLabel>
+                                                <FormLabel className="text-[#C5C6C6]">Message :</FormLabel>
                                                 <FormControl>
-                                                    <Textarea placeholder="Votre message..." {...field} />
+                                                    <Textarea placeholder="Your message..." {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -111,7 +111,7 @@ const ContactForm = () => {
                                 </CardContent>
                                 <CardFooter className="flex justify-end">
                                     <Button type="submit" disabled={isSubmitting}>
-                                        {isSubmitting ? "Envoi..." : "Envoyer"}
+                                        {isSubmitting ? "sending..." : "Send"}
                                     </Button>
                                 </CardFooter>
                             </form>
