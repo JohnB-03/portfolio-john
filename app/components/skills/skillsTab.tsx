@@ -124,7 +124,7 @@ export const skillsTab: SkillsModel[] = [
                 level: 4
             },
             {
-                name: "Communication",
+                name: "Creativity",
                 level: 4
             },
             {
@@ -132,7 +132,7 @@ export const skillsTab: SkillsModel[] = [
                 level: 5
             },
             {
-                name: "Working under pressure",
+                name: "Resilient",
                 level: 4
             },
             {
