@@ -45,7 +45,7 @@ export const skillsTab: SkillsModel[] = [
                 level: 4
             },
             {
-                name: "Spring Boot",
+                name: "Spring",
                 level: 4
             },
             {
@@ -82,10 +82,6 @@ export const skillsTab: SkillsModel[] = [
                 level: 4
             },
             {
-                name: "SQL Server",
-                level: 4
-            },
-            {
                 name: "MySQL",
                 level: 3
             },
@@ -111,7 +107,7 @@ export const skillsTab: SkillsModel[] = [
                 level: 2
             },
             {
-                name: "React Native",
+                name: "React/Native",
                 level: 3
             }
         ]
