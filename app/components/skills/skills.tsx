@@ -49,10 +49,10 @@ export default function Skills() {
                         .map((skill, index) => (
                             <motion.div
                                 key={`${paging.first}-${index}`}
-                                initial={{ skewX: 0, skewY: 0 }}
-                                animate={{ skewX: 0, skewY: 0 }}
-                                exit={{ rotate: 360 }}
-                                transition={{ duration: 1 }}
+                                initial={{ scale: 0.9 }}
+                                animate={{ scale: 1, x: [0, -8, 4, -3, 0] }}
+                                exit={{ scale: 0.9 }}
+                                transition={{ duration: 0.6, ease: "easeInOut" }}
                             >
                                 <SkillsCard skill={skill} />
                             </motion.div>
@@ -76,7 +76,7 @@ export default function Skills() {
                 }
             </div>
 
-        </div>
+        </div >
     );
 }
 
