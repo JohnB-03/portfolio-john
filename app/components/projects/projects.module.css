@@ -1,0 +1,26 @@
+.card:hover .cardContent {
+    opacity: 1;
+    max-height: 100px;
+}
+
+.cardContent {
+    font-size: 0.875rem;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+}
+
+.card {
+    transition: all 0.5s ease;
+    height: auto;
+    padding: 0;
+    width: 500px;
+    overflow: hidden;
+}
+
+.card:hover {
+    height: 425px !important;
+    width: 500px !important;
+    box-shadow: 0 25px 50px -12px #F1895C;
+    scale: 1.05;
+}

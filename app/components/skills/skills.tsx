@@ -3,31 +3,38 @@
 import SkillsCard from "./skillsCard";
 import { skillsTab } from "./skillsTab";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 export default function Skills() {
     const cardPerPage = 2;
-    const numberPages = Math.round(skillsTab.length / cardPerPage);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [useAnimation, setUseAnimation] = useState(false);
+    const skills = skillsTab;
+    const numberPages = Math.round(skills.length / cardPerPage);
+    const [paging, setPaging] = useState({ first: 0, last: 1 })
+    let style = "";
     function setNextPage() {
-        if (currentPage < numberPages) {
-            setUseAnimation(true);
-            setCurrentPage((prev) => prev + 1);
-
+        if (paging.first + cardPerPage < skills.length) {
+            setPaging((prev) => ({
+                first: prev.first + cardPerPage,
+                last: prev.last + cardPerPage
+            }));
         }
 
     }
 
     function setPreviousPage() {
-        if (currentPage > 1)
-            setCurrentPage((prev) => prev - 1);
+        if (paging.last > 1) {
+            setPaging((prev) => ({
+                first: prev.first - cardPerPage,
+                last: prev.last - cardPerPage
+            }));
+        }
+
     }
 
     function changePage(numPage: number) {
-        setCurrentPage(numPage);
+        setPaging({ first: numPage * cardPerPage - 2, last: numPage * cardPerPage - 1 });
     }
-
-    const skills = skillsTab.slice((currentPage * cardPerPage) - 2, (currentPage * cardPerPage));
 
     return (
         <div id="Skills" className="pt-20 " >
@@ -36,12 +43,21 @@ export default function Skills() {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8" onClick={setPreviousPage}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                 </svg>
-                {
-                    skills.map((skill, index) => (
-                        (<div className="transition-opacity 1s ease-in-out" key={`${currentPage}-${index}`}><SkillsCard skill={skill}></SkillsCard></div>)
-                    )
-                    )
-                }
+                <AnimatePresence mode="wait">
+                    {skills
+                        .filter((_, index) => index === paging.first || index === paging.last)
+                        .map((skill, index) => (
+                            <motion.div
+                                key={`${paging.first}-${index}`}
+                                initial={{ skewX: 0, skewY: 0 }}
+                                animate={{ skewX: 0, skewY: 0 }}
+                                exit={{ rotate: 360 }}
+                                transition={{ duration: 1 }}
+                            >
+                                <SkillsCard skill={skill} />
+                            </motion.div>
+                        ))}
+                </AnimatePresence>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8" onClick={setNextPage}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
@@ -51,8 +67,8 @@ export default function Skills() {
                     [1, 2, 3].map((page, index) =>
                     (
                         <div key={index}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill={currentPage === page ? "#F1895C" : "currentColor"} className="w-5 h-5" viewBox="0 0 20 20" onClick={() => changePage(page)}>
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" clip-rule="evenodd" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill={paging.first / cardPerPage + 1 === page ? "#F1895C" : "currentColor"} className="w-5 h-5" viewBox="0 0 20 20" onClick={() => changePage(page)}>
+                                <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" clipRule="evenodd" />
                             </svg>
                         </div>
                     )
@@ -63,3 +79,19 @@ export default function Skills() {
         </div>
     );
 }
+
+
+/*
+ 
+
+
+
+{
+                    skills.map((skill, index) => (
+                        (index === paging.first || index === paging.last ?
+                            (<div className="block animate-appear" key={`${paging.first}-${index}`}><SkillsCard skill={skill}></SkillsCard></div>) :
+                            (<div className="hidden animate-disappear" key={`${paging.first}-${index}`}><SkillsCard skill={skill}></SkillsCard></div>)
+                        ))
+                    )
+                }
+ */
