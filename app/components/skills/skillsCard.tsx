@@ -11,7 +11,7 @@ export default function SkillsCard({ skill }: { skill: SkillsModel }) {
 
     return (
         <div>
-            <Card className="w-100 h-110 opacity-55 hover:opacity-100 shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] hover:scale-105 hover:-translate-y-1">
+            <Card className="w-100 h-110 border-2 opacity-60 hover:opacity-100 shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] hover:scale-105 hover:-translate-y-1">
                 <CardHeader className="border-b justify-center">
                     <CardTitle>{skill.name}</CardTitle>
                 </CardHeader>

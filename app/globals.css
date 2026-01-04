@@ -59,7 +59,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #2E3244;
+
   --foreground: #C5C6C6;
   --card: #516079;
   --card-foreground: #C5C6C6;
@@ -93,7 +93,7 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
+  --background: #2E3244;
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
@@ -138,4 +138,28 @@
 
 body {
   font-family: 'Lobster';
+}
+
+html {
+  --sz: 10px;
+  --c1: #2E3244;
+  --c2: #49506d;
+  --c3: #292c3c;
+  --c4: #2b3047;
+  --ts: 50% / calc(var(--sz) * 10) calc(var(--sz) * 10);
+  --pz: calc(var(--sz) * 0.65), #fff0 calc((var(--sz) * 0.65) + 1px);
+
+  background: radial-gradient(circle at 53% 25%, var(--c4) var(--pz)) var(--ts),
+    radial-gradient(circle at 75% 47%, var(--c2) var(--pz)) var(--ts),
+    radial-gradient(circle at 3% 75%, var(--c2) var(--pz)) var(--ts),
+    radial-gradient(circle at 25% 53%, var(--c4) var(--pz)) var(--ts),
+    radial-gradient(circle at 53% 75%, var(--c3) var(--pz)) var(--ts),
+    radial-gradient(circle at 75% 97%, var(--c1) var(--pz)) var(--ts),
+    radial-gradient(circle at 3% 25%, var(--c1) var(--pz)) var(--ts),
+    radial-gradient(circle at 25% 3%, var(--c3) var(--pz)) var(--ts),
+    conic-gradient(from 0deg at 50% 50%,
+      var(--c1) 0 25%,
+      var(--c2) 0 50%,
+      var(--c3) 0 75%,
+      var(--c4) 0 100%) var(--ts);
 }

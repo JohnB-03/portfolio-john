@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectsModel } from "./projectsTab";
-import { Image } from "lucide-react";
+import { Globe } from 'lucide-react';
 import styles from "./projects.module.css";
 function ProjectsCard({ project }: { project: ProjectsModel }) {
     function cardClick() {
@@ -15,17 +15,23 @@ function ProjectsCard({ project }: { project: ProjectsModel }) {
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                     <p>{project.description}</p>
-                    <p>Github Link : <a href={project.githubLink} target="_blank" className="hover:text-[#F1895C] hover:underline ">{project.githubLink}</a>
-                    </p>
-                    {
-                        project.webSiteLink ?
-                            (<p>WebSite Link : <a href={project.webSiteLink} target="_blank" className="hover:text-[#F1895C] hover:underline">{project.webSiteLink}</a></p>)
-                            : <></>
-                    }
+                    <div className="flex justify-center gap-2 pt-2">
+                        {
+                            project.githubLink ?
+                                (<a href={project.githubLink} target="_blank"><img src="../images/github-mark-white.png" className="h-7 w-7 rounded-full hover:bg-[#F1895C]"></img></a>)
+                                : <></>
+                        }
+                        {
+                            project.webSiteLink ?
+                                (<a href={project.webSiteLink} target="_blank" className="hover:text-[#F1895C]"><Globe size={28}></Globe></a>)
+                                : <></>
+                        }
+                    </div>
+
                 </CardContent>
             </Card>
 
-        </div>
+        </div >
     );
 }
 

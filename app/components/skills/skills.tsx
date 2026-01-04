@@ -43,15 +43,13 @@ export default function Skills() {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8" onClick={setPreviousPage}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                 </svg>
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout">
                     {skills
                         .filter((_, index) => index === paging.first || index === paging.last)
                         .map((skill, index) => (
                             <motion.div
                                 key={`${paging.first}-${index}`}
-                                initial={{ scale: 0.9 }}
-                                animate={{ scale: 1, x: [0, -8, 4, -3, 0] }}
-                                exit={{ scale: 0.9 }}
+                                animate={{ x: [0, -8, 4, -3, 0] }}
                                 transition={{ duration: 0.6, ease: "easeInOut" }}
                             >
                                 <SkillsCard skill={skill} />

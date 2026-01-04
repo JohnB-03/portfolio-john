@@ -1,20 +1,17 @@
-'use client'
+
+import tabNavElem from "@/app/utils/navTabUtils";
 export default function TopNavBar() {
-    const classNameAnchor: string = "p-2 pr-6"
-    const tabNavElem: string[] = [
-        "Home",
-        "Skills",
-        "Projects",
-        "Contacts"
-    ];
+    const classNameAnchor: string = "p-2 pr-6";
 
     return (
         <div className="fixed top-3 left-160 text-xl">
-            {
-                tabNavElem.map((elem, index) => (
-                    (<a key={index} className={classNameAnchor} href={`#${elem}`}>{elem}</a>)
-                ))
-            }
+            <nav>
+                {
+                    tabNavElem.map((elem, index) => (
+                        (<a key={index} className={classNameAnchor} href={`#${elem}`}>{elem}</a>)
+                    ))
+                }
+            </nav>
         </div >
     );
 }

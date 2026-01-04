@@ -60,7 +60,7 @@ const ContactForm = () => {
     }
     return (
         <div className="pl-30">
-            <Card className="w-75 lg:w-95 border-2 border-[#F1895C] shadow-xl">
+            <Card className="w-75 lg:w-95 border-2 border-[#F1895C]  shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] hover:scale-105 hover:-translate-y-1 ">
                 <CardHeader>
                     <CardTitle className="text-[#C5C6C6]">Contact me</CardTitle>
                 </CardHeader>
@@ -110,7 +110,7 @@ const ContactForm = () => {
                                     />
                                 </CardContent>
                                 <CardFooter className="flex justify-end">
-                                    <Button type="submit" disabled={isSubmitting}>
+                                    <Button type="submit" disabled={isSubmitting} className="hover:bg-[#F1895C]">
                                         {isSubmitting ? "sending..." : "Send"}
                                     </Button>
                                 </CardFooter>

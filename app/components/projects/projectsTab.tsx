@@ -22,12 +22,6 @@ export const projectsTab: ProjectsModel[] = [
         githubLink: "https://github.com/JohnB-03/SportWithMeBackOffice",
     },
     {
-        img: "../images/arduino.jpg",
-        title: "Mini projects arduino",
-        description: "Mini projects arduino made in C++ just for fun",
-        githubLink: "https://github.com/JohnB-03/Arduino-LCD",
-    },
-    {
         img: "../images/CommingSoon.png",
         title: "New Project"
     }
