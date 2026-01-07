@@ -59,8 +59,8 @@ const ContactForm = () => {
         })
     }
     return (
-        <div className="pl-30">
-            <Card className="w-75 lg:w-95 border-2 border-[#F1895C]  shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] hover:scale-105 hover:-translate-y-1 ">
+        <div className="pl-30 ">
+            <Card className="w-75 lg:w-95  bg-transparent border-2 border-[#F1895C]  shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] ">
                 <CardHeader>
                     <CardTitle className="text-[#C5C6C6]">Contact me</CardTitle>
                 </CardHeader>
@@ -89,7 +89,7 @@ const ContactForm = () => {
                                             <FormItem>
                                                 <FormLabel className="text-[#C5C6C6]">Email :</FormLabel>
                                                 <FormControl>
-                                                    <Input placeholder="Your email address..." {...field} />
+                                                    <Input className="bg-[#516079] border-[#F1895C]" placeholder="Your email address..." {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -102,7 +102,7 @@ const ContactForm = () => {
                                             <FormItem>
                                                 <FormLabel className="text-[#C5C6C6]">Message :</FormLabel>
                                                 <FormControl>
-                                                    <Textarea placeholder="Your message..." {...field} />
+                                                    <Textarea className="bg-[#516079] border-[#F1895C]" placeholder="Your message..." {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -110,7 +110,7 @@ const ContactForm = () => {
                                     />
                                 </CardContent>
                                 <CardFooter className="flex justify-end">
-                                    <Button type="submit" disabled={isSubmitting} className="hover:bg-[#F1895C]">
+                                    <Button type="submit" disabled={isSubmitting} className="hover:bg-[#F1895C] bg-[#516079] border border-[#F1895C]">
                                         {isSubmitting ? "sending..." : "Send"}
                                     </Button>
                                 </CardFooter>

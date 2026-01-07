@@ -1,14 +1,14 @@
-
 import tabNavElem from "@/app/utils/navTabUtils";
+import styles from "./topNavBar.module.css";
+
 export default function TopNavBar() {
-    const classNameAnchor: string = "p-2 pr-6";
 
     return (
-        <div className="fixed top-3 left-160 text-xl">
+        <div className="fixed top-3 left-160 text-xl z-1000 isolate">
             <nav>
                 {
                     tabNavElem.map((elem, index) => (
-                        (<a key={index} className={classNameAnchor} href={`#${elem}`}>{elem}</a>)
+                        (<a key={index} className={`${styles.navLinks} navLinks`} href={`#${elem}`}>{elem}</a>)
                     ))
                 }
             </nav>

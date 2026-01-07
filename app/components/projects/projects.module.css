@@ -19,6 +19,8 @@
     overflow: hidden;
     padding-bottom: 20px;
     border-width: 2px;
+    background: transparent;
+
 }
 
 .card:hover {
