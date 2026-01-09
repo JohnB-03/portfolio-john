@@ -23,7 +23,9 @@ export const projectsTab: ProjectsModel[] = [
     },
     {
         img: "../images/CommingSoon.png",
-        title: "New Project"
+        title: "New Project",
+        description: "blabalbalbalbalablablabalbalbalablablabalbalbalbalablablabalbalabla",
+        githubLink: "https://github.com/JohnB-03/SportWithMeBackOffice",
     }
 ];
 

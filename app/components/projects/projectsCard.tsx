@@ -3,15 +3,14 @@ import { ProjectsModel } from "./projectsTab";
 import { Globe } from 'lucide-react';
 import styles from "./projects.module.css";
 function ProjectsCard({ project }: { project: ProjectsModel }) {
-    function cardClick() {
-
-    }
     return (
-        <div className="">
+        <div>
             <Card className={styles.card}>
                 <CardHeader className="p-0 justify-items-center">
-                    <img src={project.img} className="h-60 w-full rounded-t-xl "></img>
-                    <CardTitle className="font-bold text-2xl pb-3">{project.title}</CardTitle>
+                    <div className={styles.imageWrapper}>
+                        <img src={project.img} className={styles.images}></img>
+                    </div>
+                    <CardTitle className="font-bold text-2xl">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                     <p>{project.description}</p>
