@@ -4,6 +4,8 @@ import "./globals.css";
 import TopNavBar from "./components/header/topNavBar/topNavBar";
 import Footer from "./components/footer/footer";
 import ScrollSpy from "./actions/scrollSpy";
+import { ThemeProvider } from "./actions/themeProvider";
+import MenuTools from "./components/header/menuTools/menuTools";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,19 +28,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
-          <TopNavBar></TopNavBar>
-        </header>
-        <ScrollSpy></ScrollSpy>
-        {children}
-        <footer>
-          <Footer></Footer>
-        </footer>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          <header>
+            <MenuTools />
+            <TopNavBar />
+          </header>
+
+          <ScrollSpy />
+          {children}
+
+          <footer>
+            <Footer />
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
+
   );
 }

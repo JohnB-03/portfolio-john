@@ -38,7 +38,7 @@ export default function Skills() {
 
     return (
         <section id="Skills">
-            <div className="pt-20 " >
+            <div className="pt-20 pb-30" >
                 <h1 className="pl-10 pb-10 text-4xl">Here is my skills...</h1>
                 <div className="py-5 flex justify-center place-items-center gap-7">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8" onClick={setPreviousPage}>
