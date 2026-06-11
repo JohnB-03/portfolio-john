@@ -16,7 +16,7 @@ export default function MenuTools() {
     }
 
     return (
-        <div className="p-4 pl-7">
+        <div className="p-4 md:pl-7">
             <Button variant="outline" size="icon" onClick={changeTheme}>
                 {theme === "dark" ?
                     <Lightbulb />

@@ -12,7 +12,7 @@ export default function Footer() {
                         <clipPath id="circle-clip">
                             <circle cx="60" cy="60" r="56" />
                         </clipPath>
-                        <image href="../images/mePng.png" x="-7" y="0" className="h-32 w-32" clip-path="url(#circle-clip)" preserveAspectRatio="xMidYMid cover" />
+                        <image href="../images/mePng.png" x="-7" y="0" className="h-32 w-32" clipPath="url(#circle-clip)" />
                     </svg>
                     <p className="pt-2">John Bourguignon</p>
                     <p>Passionate junior web developer crafting beautiful digital experiences.</p>

@@ -1,16 +1,32 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectsModel } from "./projectsTab";
 import { Globe } from 'lucide-react';
 import styles from "./projects.module.css";
-function ProjectsCard({ project }: { project: ProjectsModel }) {
+import { number } from "zod";
+import { useState } from "react";
+function ProjectsCard({ project, index }: { project: ProjectsModel, index: number }) {
+    const [style, setStyle] = useState("");
+
+    function cardOnClick() {
+        if (style) {
+            setStyle("");
+        } else {
+            setStyle("Click");
+        }
+
+    }
+
     return (
         <div>
-            <Card className={styles.card}>
-                <CardHeader className="p-0 justify-items-center">
+            <Card onClick={cardOnClick} className={`${styles.card} ${styles[`card${style}_${index}`]}`} >
+                <CardHeader className="p-0 justify-items-center , ">
                     <div className={styles.imageWrapper}>
-                        <img src={project.img} className={styles.images}></img>
+                        <img src={project.img} className={styles.image}></img>
                     </div>
-                    <CardTitle className="font-bold text-2xl">{project.title}</CardTitle>
+                    <CardTitle className="font-bold text-2xl ">{project.title}</CardTitle>
+
                 </CardHeader>
                 <CardContent className={styles.cardContent}>
                     <p>{project.description}</p>
@@ -38,7 +54,6 @@ function ProjectsCard({ project }: { project: ProjectsModel }) {
 
                 </CardContent>
             </Card>
-
         </div >
     );
 }

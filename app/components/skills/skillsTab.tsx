@@ -107,7 +107,7 @@ export const skillsTab: SkillsModel[] = [
                 level: 2
             },
             {
-                name: "React/Native",
+                name: "React",
                 level: 3
             }
         ]
@@ -121,11 +121,11 @@ export const skillsTab: SkillsModel[] = [
             },
             {
                 name: "Creativity",
-                level: 4
+                level: 5
             },
             {
                 name: "Motivated",
-                level: 5
+                level: 6
             },
             {
                 name: "Resilient",
@@ -146,7 +146,7 @@ export const skillsTab: SkillsModel[] = [
             },
             {
                 name: "French",
-                level: 5
+                level: 6
             },
             {
                 name: "Dutch",

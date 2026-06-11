@@ -59,8 +59,8 @@ const ContactForm = () => {
         })
     }
     return (
-        <div className="pl-30 ">
-            <Card className="w-75 lg:w-95  bg-transparent border-2 border-[#F1895C]  shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] ">
+        <div>
+            <Card className="w-75 md:w-95  bg-transparent border-2 border-[#F1895C]  shadow-2xl transition delay-150 duration-300 ease-in-out hover:shadow-[#F1895C] ">
                 <CardHeader>
                     <CardTitle>Contact me</CardTitle>
                 </CardHeader>

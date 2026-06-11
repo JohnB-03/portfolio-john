@@ -38,10 +38,10 @@ export default function Skills() {
 
     return (
         <section id="Skills">
-            <div className="pt-20 pb-30" >
-                <h1 className="pl-10 pb-10 text-4xl">Here is my skills...</h1>
-                <div className="py-5 flex justify-center place-items-center gap-7">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8" onClick={setPreviousPage}>
+            <div className="pt-20 pb-30 md:pl-0 pl-3" >
+                <h1 className="md:pl-10 pb-10 text-4xl">Here is my skills...</h1>
+                <div className="py-5 flex justify-center place-items-center md:gap-7 gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8 md:block hidden" onClick={setPreviousPage}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                     <AnimatePresence mode="popLayout">
@@ -57,7 +57,7 @@ export default function Skills() {
                                 </motion.div>
                             ))}
                     </AnimatePresence>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8" onClick={setNextPage}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-8 md:block hidden" onClick={setNextPage}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </div>

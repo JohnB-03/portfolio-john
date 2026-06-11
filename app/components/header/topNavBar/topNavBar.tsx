@@ -4,7 +4,7 @@ import styles from "./topNavBar.module.css";
 export default function TopNavBar() {
 
     return (
-        <div className="fixed top-3 left-160 text-xl z-1000 isolate">
+        <div className="fixed top-4 md:left-160 md:text-2xl z-1000 left-20 isolate right-0 text-lm">
             <nav>
                 {
                     tabNavElem.map((elem, index) => (
@@ -15,13 +15,3 @@ export default function TopNavBar() {
         </div >
     );
 }
-
-/* panel de couleur...
-
-#2E3244
-#C5C6C6
-#FFFFFF
-#F1895C
-#516079
-
-*/
